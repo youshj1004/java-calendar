@@ -3,7 +3,7 @@ package shj.calendar;
 public class Calendar {
 	public static void main(String[] args) {
 		
-		System.out.println(" ÀÏ   ¿ù    È­   ¼ö    ¸ñ    ±İ    Åä"); // ÇÑ±Û ±úÁö´Â ºÎºĞ Ã¼Å©¸¦ À§ÇÑ ÁÖ¼®
+		System.out.println(" ì›”   í™”    ìˆ˜   ëª©    ê¸ˆ   í†     ì¼");
 		System.out.println("---------------------");
 		System.out.println(" 1  2  3  4  5  6  7");
 		System.out.println(" 8  9 10 11 12 13 14");
