@@ -6,29 +6,37 @@ public class Prompt {
 
 	private final static String YEAR = "YEAR> ";
 	private final static String MONTH = "MONTH> ";
+	private final static String WEEKDAY = "WEEKDAY > ";
 
 	public static void runPrompt() {
 		Calendar cal = new Calendar();
 		Scanner sr = new Scanner(System.in);
-
+		
+		int month = 1;
+		int year = 2018;
+		String weekday = "";
+		
 		while (true) {
-			System.out.println("년도를 입력하세요.");
+			System.out.println("년도를 입력하세요.(exit:-1)");
 			System.out.print(YEAR);
-			int year = sr.nextInt();
-			System.out.println("월을 입력하세요.(-1을 입력하면 종료됩니다.)");
-			System.out.print(MONTH);
-			int month = sr.nextInt();
-			if (month == -1) {
+			year = sr.nextInt();
+			if(year == -1) {
+				System.out.println("프로그램이 종료되었습니다.");
 				break;
 			}
-			if (month > 12) {
+			System.out.println("달을 입력하세요.");
+			System.out.print(MONTH);
+			month = sr.nextInt();
+			if (month > 12 || month < 1)  {
 				System.out.printf("%d월은 존재하지 않습니다.", month);
-				continue;
 			}
-			cal.printCalendar(year, month);
+			System.out.println("첫번째 요일을 입력하세요(SU,MO,TU,WE,TH,FR,SA)");
+			System.out.print(WEEKDAY);
+			weekday = sr.next().toUpperCase();
+
+			cal.printCalendar(year, month, weekday);
 			
 		}
-		System.out.println("프로그램이 종료되었습니다.");
 	}
 
 	public static void main(String[] args) {
